@@ -39,6 +39,7 @@ export default {
 //路由切换时的过渡
 .app-container{
   padding-top: 50px;
+  padding-bottom: 50px;
   overflow-x: hidden;
 }
 .v-enter {

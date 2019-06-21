@@ -10,10 +10,10 @@
     </mt-swipe>
     <!-- 九宫格 到 6宫格 的改造工程 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
           <img src="../../assets/menu1.png" alt="">
           <div class="mui-media-body">新闻资讯</div>
-        </a></li>
+        </router-link></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
           <img src="../../assets/menu2.png" alt="">
           <div class="mui-media-body">图片分享</div>
@@ -61,8 +61,6 @@
           if (result.data.status === 0) {
             // 成功了
             this.lunbotuList = result.data.message;
-
-
           } else {
             /* console.log("加载失败") */
             Toast("加载轮播图失败。。。");
