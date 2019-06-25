@@ -14,7 +14,7 @@ Vue.prototype.$axios=axios
 
 // 导入格式化时间的插件
 import moment from 'moment'
-// 定义全局的过滤器
+// 定义全局的过滤器，可以改变日期格式 
 Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
   return moment(dataStr).format(pattern)
 })
@@ -24,16 +24,13 @@ import { Header} from 'we-vue'
 Vue.use(Header)
 import 'we-vue/lib/style.css'
 //按需导入mint ui的组件及相关样式 ---轮播组件
-import {  Swipe, SwipeItem,Button} from 'mint-ui'
+import mintui from 'mint-ui'
 import "mint-ui/lib/style.css"
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
-Vue.component(Button.name, Button)
+Vue.use(mintui)
 
-// 导入mui的样式  --mui 类似于一个bootstrap，负责组成底部的组件
-import './lib/mui/css/mui.min.css'
-import './lib/mui/css/icons-extra.css'
-
+//导入缩略图组件 
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview)
 // 导入App根组件
 import App from './App'
 Vue.config.productionTip = false
