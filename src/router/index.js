@@ -10,6 +10,9 @@ import newsinfo from '../components/news/newsinfo.vue'
 import photolist from '../components/photos/photolist.vue'
 import photoinfo from '../components/photos/photoinfo.vue'
 import goodslist from '../components/goods/goodslist.vue'
+import goodsinfo from '../components/goods/goodsinfo.vue'
+import goodsdesc from '../components/goods/goodsdesc.vue'
+import goodscomment from '../components/goods/goodscomment.vue'
 //创建路由对象
 var router = new VueRouter({
     routes:[
@@ -22,7 +25,10 @@ var router = new VueRouter({
         {path:'/home/newsinfo/:id',component:newsinfo},
         {path:'/home/photolist',component:photolist},
         {path:'/home/photoinfo/:id',component:photoinfo},
-        {path:'/home/goodslist',component:goodslist}
+        {path:'/home/goodslist',component:goodslist},
+        {path:'/home/goodsinfo/:id',component:goodsinfo},
+        {path:'/home/goodsdesc/:id',component:goodsdesc ,name:'goodsdesc'},
+        {path:'/home/goodscomment/:id',component:goodscomment ,name:'goodscomment'}
     ],
     linkActiveClass:'mui-active', //设置class 覆盖默认的router-link-active
     scrollBehavior (to, from, savedPosition) {

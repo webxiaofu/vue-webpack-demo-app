@@ -97,6 +97,7 @@ export default {
     margin-bottom: 10px;
     box-shadow: 0 0 9px #999;
     position: relative;
+    padding: 0;
     
     img {
       width: 100%;

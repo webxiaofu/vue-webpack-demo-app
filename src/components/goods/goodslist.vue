@@ -1,6 +1,7 @@
 <template>
   <div class="main">
-    <div
+    <router-link
+      :to="'/home/goodsinfo/'+item.id"
       class="container"
       v-for="item in goodslist"
       :key="item.id"
@@ -21,14 +22,14 @@
         </p>
 
       </div>
-    </div>
+    </router-link>
     <mt-button
       type="danger"
       size="large"
       plain
       @click="getMore"
     >加载更多</mt-button>
-  </div>
+    </div>
 
 </template>
 <script>
@@ -59,9 +60,9 @@ export default {
         })
         .catch(err => {});
     },
-    getMore(){
-      this.pageindex++
-      this.getgoodslist()
+    getMore() {
+      this.pageindex++;
+      this.getgoodslist();
     }
   }
 };

@@ -2,18 +2,7 @@
   <div>
 
     <!-- 轮播图区域 -->
-    <mt-swipe :auto="2000">
-      <!-- 在组件中，使用v-for循环的话，一定要使用 key -->
-      <mt-swipe-item
-        v-for="item in lunbotuList"
-        :key="item.img"
-      >
-        <img
-          :src="item.img"
-          alt=""
-        >
-      </mt-swipe-item>
-    </mt-swipe>
+    <swiper :lunbotuList='lunbotuList' :iswidth="true"></swiper>
     <!-- 九宫格 到 6宫格 的改造工程 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -69,10 +58,13 @@
 <script>
 //导入 mint-ui里的Toast组件，如果数据获取失败则弹出提醒
 import { Toast } from "mint-ui";
+//导入轮播图组件
+import swiper from '../subcomponents/swiper'
 export default {
   data() {
     return {
       lunbotuList: [] // 保存轮播图的数组
+      
     };
   },
   created() {
@@ -93,19 +85,15 @@ export default {
             Toast("加载轮播图失败。。。");
           }
         });
-    }
+    }  
+  },
+  components:{
+    swiper
   }
 };
 </script>
 <style scoped lang="scss">
-/* 轮播图相关样式 */
-.mint-swipe {
-  height: 200px;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
+
 
 /* 六宫格样式 */
 .mui-grid-view.mui-grid-9 {
